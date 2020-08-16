@@ -1,0 +1,19 @@
+{
+	"name": "koa-to-serverless",
+	"version": "1.0.0",
+	"description": "改一行代码将Koa框架项目在Serverless架构服务中运行",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inlym/koa-to-serverless.git"
+	},
+	"author": "inlym",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inlym/koa-to-serverless/issues"
+	},
+	"homepage": "https://github.com/inlym/koa-to-serverless#readme"
+}
