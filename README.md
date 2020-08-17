@@ -11,7 +11,10 @@
 Serverless 架构相对于自行部署的原生环境有巨大的优势（各大云厂商介绍的非常详细了，这里就不赘述了），但是已有的代码想要直接迁移到 Serverless 架构上却不容易，主要面临以下几个困难：
 
 （1）Serverless 架构环境与原生环境有所差异，原有的代码无法直接运行。
+
 （2）各云厂商的 Serverless 实现都有所差异，无法兼容。
+
+
 
 koa-to-serverless 就是为了解决这个问题诞生的。它能够让你只改一行代码就让你的原生 Koa 框架应用在 Serverless 架构环境上运行。
 
@@ -38,6 +41,7 @@ npm i koa-to-serverless
 ### 注意事项
 （1）由于已经将请求的 body 植入了 **app.request.body** ，你无需再使用 **koa-bodyparser** 获取 body，请直接
 去掉对应代码。
+
 （2）其他 Koa 的中间件，目前未发现不能使用的。若你在使用中发现某个中间件使用异常，请向我提 issue。
 
 
@@ -62,13 +66,17 @@ npm i koa-to-serverless
 以下是 API 网关配置的注意事项：
 
 （1）【请求路径】：配置为【 / 】，并勾选【匹配所有子路径】。路径这块执行逻辑API网关层透传，由 Koa 框架的 koa-router 中间件接管处理。
+
 （2）【HTTP Method】：配置为【ANY】，相当于请求方法也是透传，由 Koa 框架的 koa-router 中间件接管处理。
+
 （3）【入参请求模式】：配置为【入参透传】。
+
 ![API网关配置1.png](https://img.inlym.com/10e429f3f9cf45539372a5b7f42514d7.jpg)
 
 
 
 以下几个参数需要 API 网关提供，请直接按照图示参数名称填写。
+
 ![API网关配置2.png](https://img.inlym.com/5398e50cd43e48f288015805cbf59065.jpg)
 
 
@@ -85,6 +93,7 @@ npm i koa-to-serverless
 ## 进阶
 ### 原理剖析
 koa-to-serverless 实际上使用以下流程给 Koa 框架提供了一个兼容层。
+
 ![流程.png](https://img.inlym.com/12095c34ab93416693eff6b03c495b1b.jpg)
 
 
@@ -98,16 +107,22 @@ koa-to-serverless 实际上使用以下流程给 Koa 框架提供了一个兼容
 
 基于以上流程，以后的扩展会非常容易，扩展主要包含2个方面：
 
-
 （1）支持 Koa 框架在其他云厂商的 Serverless 架构环境上运行。
+
 （2）支持其他框架，例如 Express 等，在 Serverless 架构环境上运行。
+
+
 
 以上2点扩展实际上都非常容易：
 （1）第1个扩展只需要增加步骤2对应的触发器处理函数就可以了。
+
 （2）第2个扩展只需要识别框架类型，然后改动步骤4，调用对应的框架的入口函数就可以了。
 
 
+
 以上扩展以后会逐渐支持。
+
+
 
 
 以下是支持情况：
