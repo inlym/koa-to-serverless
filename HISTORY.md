@@ -1,3 +1,7 @@
+# 1.1.0 / 2020-09-04
+
+-   架构重构，适配之后的多 Serverless 环境
+
 # 1.0.3 / 2020-08-23
 
 -   新增 app.request.bufBody 属性(buffer 形式的 body)

@@ -1,6 +1,6 @@
 {
 	"name": "koa-to-serverless",
-	"version": "1.0.3",
+	"version": "1.1.0",
 	"description": "只需要改一行代码就能够让你的 Koa 框架应用在 Serverless 架构环境上运行",
 	"main": "index.js",
 	"scripts": {
