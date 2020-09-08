@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
 	env: {
 		node: true,
@@ -22,8 +24,8 @@ module.exports = {
 		strict: ['error', 'global'],
 		'no-buffer-constructor': 'error',
 		'no-new-require': 'error',
-		'array-bracket-newline': ['error', 'never'],
-		'comma-dangle': ['error', 'always'],
+		'array-bracket-newline': ['error', 'consistent'],
+		'comma-dangle': ['error', 'only-multiline'],
 		'eol-last': ['error', 'always'],
 		'func-call-spacing': ['error', 'never'],
 		'key-spacing': [
@@ -62,7 +64,7 @@ module.exports = {
 				ignoreComments: true,
 			},
 		],
-		'quote-props': ['error', 'consistent'],
+		'quote-props': ['error', 'as-needed'],
 		'spaced-comment': ['error', 'always'],
 		'arrow-body-style': ['error', 'always'],
 		'no-var': 'error',
