@@ -105,3 +105,5 @@ dist
 
 # macOS 附加的文件
 .DS_Store
+
+package-lock.json
